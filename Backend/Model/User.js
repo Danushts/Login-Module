@@ -1,8 +1,9 @@
-var mongoose = require('mongoose');
-var validate = require('mongoose-validator');
-var Schema = mongoose.Schema;
+let mongoose = require('mongoose');
+let validate = require('mongoose-validator');
+//var validator = require('validator');
+let Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+let UserSchema = new Schema({
     firstName: {
         type: String,
         required: true
@@ -17,7 +18,7 @@ var UserSchema = new Schema({
         unique: true,
         validate: [
             validate({
-                validate: 'isEmail'
+                validator: 'isEmail'
             })
         ]
     },
