@@ -7,7 +7,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AppRouteModule } from './app.route.module';
-
+import { HttpClientModule } from '@angular/common/http'
+import { AuthenticationService } from './services/Authentication.Service';
+import { UserService } from './services/User.service';
+import { JwtInterceptorProvider } from './services/Jwt.Interceptor';
+import { AuthGuard } from './Auth Gate/Auth Guard';
 
 @NgModule({
   declarations: [
@@ -19,9 +23,17 @@ import { AppRouteModule } from './app.route.module';
     FormsModule,
     BrowserModule,
     AppRouteModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
+    
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthenticationService,
+    UserService,
+    JwtInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

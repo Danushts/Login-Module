@@ -8,7 +8,7 @@
         </div>
         <div class="panel-body">
 
-            <form id="signupform" class="form-horizontal" role="form">
+            <form id="signupform" (ngSubmit)="register()" class="form-horizontal" role="form">
                 <div id="signupalert" style="display:none" class="alert alert-danger">
                     <p>Error:</p>
                     <span></span>

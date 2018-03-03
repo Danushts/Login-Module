@@ -4,11 +4,16 @@ import { RouterModule,Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AuthGuard } from './Auth Gate/Auth Guard';
+
+import { appConfig } from './app.config';
 
 const routes : Routes=[
-    { path:'', redirectTo:'/login', pathMatch:'full'},
-    { path: 'login', component:LoginComponent },
-    { path : 'signup', component:SignupComponent}  
+   
+  
+    { path: '', component: LoginComponent, canActivate: [AuthGuard] },
+    { path: 'login', component:LoginComponent, canActivate: [AuthGuard]  },
+    { path : 'signup', component:SignupComponent, canActivate: [AuthGuard] } 
     
 ]
 
