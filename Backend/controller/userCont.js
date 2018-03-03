@@ -1,13 +1,16 @@
 let User = require('../Model/User');
 //var validate = require('mongoose-validator');
 let _ = require('lodash');
+
 let bcrypt = require('bcrypt');
 let jwt = require('jsonwebtoken');
 let secretKey = require('../config/secretKey');
 
 
+
 module.exports = {
     register: (req, res) => {
+
         //register the User
         /*let baseObj= _.pick(req.body,[
             "firstName",
@@ -111,3 +114,8 @@ module.exports = {
             });
     }
 };
+
+
+    }
+}
+
