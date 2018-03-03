@@ -7,4 +7,7 @@ var ctrl = require('../controller/userCont');
 // });
 
 Router.post('/signup', ctrl.register);
+
+Router.post('/signin',ctrl.login);
+
 module.exports = Router;
