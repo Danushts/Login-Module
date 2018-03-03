@@ -7,21 +7,26 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AppRouteModule } from './app.route.module';
+import { UserServiceService } from './user-service.service';
+import { TestcaseComponent } from './testcase/testcase.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    TestcaseComponent
   ],
   imports: [
-    FormsModule,
+  
+
+  FormsModule,
     BrowserModule,
     AppRouteModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UserServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
